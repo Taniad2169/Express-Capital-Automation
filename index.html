@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Express Capital Associates</title>
-    <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Express Capital Associates Brand Hub</title>
+    <!-- Removed Tailwind CDN and replaced with custom CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <style>
-        /* Your existing CSS styles remain the same */
         /* General Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
-            color: #333;
-            background: linear-gradient(135deg, #f0f2f5 0%, #dcdfe4 100%);
+            color: #fff;
+            background-color: #172636;
             min-height: 100vh;
         }
 
@@ -23,13 +22,13 @@
             margin: 0 auto;
             padding: 20px;
         }
-
+        
         /* Header Styles */
         header {
             text-align: center;
             padding: 50px 20px;
-            background-color: #1d9938;
-            color: #ebf70a;
+            background-color: #25593b;
+            color: #fff;
             position: relative;
             overflow: hidden;
         }
@@ -37,86 +36,18 @@
         header h1 {
             font-size: 3em;
             margin-bottom: 10px;
-            color: #ebf70a;
+            color: #fff;
             font-weight: bold;
         }
 
         header p {
             font-size: 1.5em;
-            color: #ebf70a;
+            color: #fff;
         }
         
-        /* Animated Emojis in Header */
-        .animated-emoji-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .animated-emoji {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%) scale(1);
-            opacity: 0;
-            animation-duration: 4s;
-            animation-timing-function: linear;
-            animation-iteration-count: infinite;
-            font-size: 3em;
-        }
-        
-        .animated-emoji:nth-child(1) {
-            left: 5%;
-            animation-name: moveAndGrow1;
-        }
-
-        .animated-emoji:nth-child(2) {
-            left: 20%;
-            animation-name: moveAndGrow2;
-        }
-
-        .animated-emoji:nth-child(3) {
-            right: 20%;
-            animation-name: moveAndGrow3;
-        }
-
-        .animated-emoji:nth-child(4) {
-            right: 5%;
-            animation-name: moveAndGrow4;
-        }
-
-        @keyframes moveAndGrow1 {
-            0% { transform: translate(0, 0) scale(0.5); opacity: 0; }
-            50% { transform: translate(100px, -20px) scale(1.5); opacity: 1; }
-            100% { transform: translate(200px, 0) scale(2); opacity: 0; }
-        }
-
-        @keyframes moveAndGrow2 {
-            0% { transform: translate(0, 0) scale(0.5); opacity: 0; }
-            50% { transform: translate(150px, 10px) scale(1.5); opacity: 1; }
-            100% { transform: translate(300px, 0) scale(2); opacity: 0; }
-        }
-
-        @keyframes moveAndGrow3 {
-            0% { transform: translate(0, 0) scale(0.5); opacity: 0; }
-            50% { transform: translate(-150px, -10px) scale(1.5); opacity: 1; }
-            100% { transform: translate(-300px, 0) scale(2); opacity: 0; }
-        }
-
-        @keyframes moveAndGrow4 {
-            0% { transform: translate(0, 0) scale(0.5); opacity: 0; }
-            50% { transform: translate(-100px, 20px) scale(1.5); opacity: 1; }
-            100% { transform: translate(-200px, 0) scale(2); opacity: 0; }
-        }
-
         /* Main Content Section Styles */
         .content-section {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: #172636;
             border-radius: 15px;
             padding: 40px;
             margin-bottom: 30px;
@@ -126,7 +57,7 @@
         .content-section h2 {
             text-align: center;
             margin-bottom: 20px;
-            color: #ebf70a;
+            color: #fff;
             font-size: 2.5em;
         }
         
@@ -137,7 +68,7 @@
             height: 0;
             overflow: hidden;
             max-width: 100%;
-            background-color: #368037;
+            background-color: #172636;
             border-radius: 8px;
         }
 
@@ -148,75 +79,104 @@
             width: 100%;
             height: 100%;
         }
-
-        .youtube-controls {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px;
-            gap: 10px;
+        
+        /* Bell section */
+        .bell-section {
+            background-color: #25593b;
+            padding: 2.5rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
         }
 
-        .youtube-controls input[type="text"] {
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            width: 70%;
-            font-size: 16px;
-        }
-
-        .youtube-controls button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            background-color: #1d9938;
-            color: white;
-            cursor: pointer;
+        .bell-section h2 {
+            font-size: 2rem;
             font-weight: bold;
-            font-size: 16px;
+            margin-bottom: 1rem;
+            color: #fff;
         }
-
-        .youtube-controls button:hover {
-            background-color: #167a2e;
-        }
-
-        /* Quick Search Buttons */
-        .quick-search {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 15px;
-            flex-wrap: wrap;
-        }
-
-        .quick-search button {
-            padding: 8px 15px;
-            border: 1px solid #1d9938;
-            border-radius: 20px;
-            background: white;
-            color: #1d9938;
+        
+        /* Demo button styles */
+        #demoBtn {
+            font-size: 40px;
             cursor: pointer;
-            font-size: 14px;
-            transition: all 0.3s;
+            border: none;
+            background: none;
+            display: block;
+            margin: 20px auto;
         }
 
-        .quick-search button:hover {
-            background: #1d9938;
-            color: white;
+        /* Bell animation (shake) */
+        .ringing {
+            animation: ring 0.3s linear infinite;
+        }
+
+        @keyframes ring {
+            0% { transform: rotate(0); }
+            25% { transform: rotate(15deg); }
+            50% { transform: rotate(0); }
+            75% { transform: rotate(-15deg); }
+            100% { transform: rotate(0); }
+        }
+
+        /* Confetti canvas */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+        }
+        
+        /* YouTube Video Buttons */
+        .youtube-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+            align-items: center;
+            background-color: #172636;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .youtube-btn {
+            width: 100%;
+            max-width: 400px;
+            padding: 1rem;
+            background-color: #25593b;
+            color: #fff;
+            border-radius: 9999px;
+            border: 2px solid #172636;
+            font-weight: 600;
+            transition: background-color 0.3s, color 0.3s;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        .youtube-btn:hover {
+            background-color: #172636;
+            color: #fff;
+            border-color: #25593b;
         }
 
         /* Footer Styles */
         footer {
             text-align: center;
             padding: 40px 20px;
-            color: #333;
+            color: #fff;
             margin-top: 30px;
-            background-image: linear-gradient(to bottom, #1d9938, #ebf70a);
+            background-color: #172636;
             position: relative;
         }
 
         .footer-content {
-            background-color: #ffffff;
+            background-color: #172636;
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 40px;
@@ -226,15 +186,16 @@
         }
 
         .footer-content p {
-            color: #333;
+            color: #fff;
+            font-size: 1.15em;
         }
         
         .footer-content strong {
-            color: #1d9938;
+            color: #fff;
         }
         
         .bouncing-emoji {
-            font-size: 2em;
+            font-size: 2.5em;
             display: inline-block;
             animation: bounce 1s infinite;
         }
@@ -253,277 +214,338 @@
             display: inline-block;
             margin-top: 20px;
             padding: 10px 20px;
-            font-size: 1.2em;
+            font-size: 1.3em;
             font-weight: bold;
             text-decoration: none;
-            color: #1d9938;
+            color: #fff;
             background-color: transparent;
-            border: 2px solid #1d9938;
+            border: 2px solid #fff;
             border-radius: 25px;
             transition: all 0.3s ease;
         }
         
         .booking-button:hover {
-            background-color: #1d9938;
-            color: #ebf70a;
-            border-color: #ebf70a;
+            background-color: #fff;
+            color: #172636;
+            border-color: #172636;
         }
         
         .booking-button .emoji {
             margin-right: 10px;
         }
 
-        /* Loading spinner */
-        .loading {
+        /* Modal Styles */
+        .modal {
             display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #172636;
+            color: #fff;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #25593b;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             text-align: center;
+            animation: fadeInScale 0.3s ease-out;
+        }
+        
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .modal-header {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        
+        .modal-links a {
+            display: block;
+            background: #25593b;
+            color: #fff;
+            padding: 15px;
             margin: 10px 0;
+            border: 1px solid #25593b;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .modal-links a:hover {
+            background: #172636;
+            color: #fff;
+            border-color: #25593b;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transform: translateY(-2px);
         }
 
-        .spinner {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #1d9938;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            animation: spin 2s linear infinite;
-            margin: 0 auto;
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
         }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .close-btn:hover,
+        .close-btn:focus {
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
         }
 
-        /* Success message */
-        .success-message {
-            background: #d4edda;
-            color: #155724;
-            padding: 10px;
-            border-radius: 5px;
-            margin: 10px 0;
-            text-align: center;
-            display: none;
+        /* Utility classes to replace Tailwind */
+        .text-center { text-align: center; }
+        .font-bold { font-weight: bold; }
+        .text-white { color: #fff; }
+        .text-xl { font-size: 1.25rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .sm\:flex-row { flex-direction: row; }
+        .justify-center { justify-content: center; }
+        .gap-4 { gap: 1rem; }
+        .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+        .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+        .bg-\[\#25593b\] { background-color: #25593b; }
+        .text-\[\#172636\] { color: #172636; }
+        .rounded-full { border-radius: 9999px; }
+        .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+        .hover\:bg-\[\#172636\]:hover { background-color: #172636; }
+        .transition-colors { transition-property: background-color, border-color, color, fill, stroke; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+        .duration-300 { transition-duration: 300ms; }
+        .bg-white { background-color: #fff; }
+        .border-2 { border-width: 2px; }
+        .border-\[\#25593b\] { border-color: #25593b; }
+        .hover\:bg-\[\#25593b\]:hover { background-color: #25593b; }
+        .hover\:text-white:hover { color: #fff; }
+        .items-center { align-items: center; }
+        .p-8 { padding: 2rem; }
+        .rounded-lg { border-radius: 0.5rem; }
+
+        @media (min-width: 640px) {
+            .sm\:flex-row { flex-direction: row; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="animated-emoji-container">
-            <span class="animated-emoji">🎯</span>
-            <span class="animated-emoji">🔔</span>
-            <span class="animated-emoji">💡</span>
-            <span class="animated-emoji">💰</span>
-        </div>
         <h1>Express Capital Associates</h1>
         <p>Soaring Above the Competition</p>
     </header>
 
     <main class="container">
         <section id="youtube-player" class="content-section">
-            <h2>Welcome to Express Capital Associates</h2>
+            <h2 class="text-white font-bold">Welcome to Express Capital Associates</h2>
             <div class="video-container">
-                <iframe id="video-iframe" src="https://www.youtube.com/embed/qkDXszfLl8Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            
-            <div class="youtube-controls">
-                <input type="text" id="searchInput" placeholder="Type any topic (e.g., how to create automated email)">
-                <button id="searchBtn">🔍 Search & Load Video</button>
+                <!-- Simplified YouTube iframe to reduce permission warnings -->
+                <iframe id="video-iframe" src="https://www.youtube.com/embed/ZJ5lOQdbL3o" frameborder="0" allowfullscreen></iframe>
             </div>
 
-            <div class="quick-search">
-                <button data-search="business funding tips">💰 Business Funding</button>
-                <button data-search="marketing strategies">📈 Marketing</button>
-                <button data-search="small business growth">📊 Business Growth</button>
-                <button data-search="financial planning">📋 Financial Planning</button>
+            <div class="youtube-buttons">
+                <button class="youtube-btn" data-youtube-url="https://youtu.be/tsAqssegmxs">Express Capital Associates</button>
+                <button class="youtube-btn" data-youtube-url="https://youtu.be/UNFkK0XC6dA">How we can help you grow</button>
+                <button class="youtube-btn" data-youtube-url="https://youtu.be/13fxhjfi6zg">Small business? we can help!</button>
+                <button class="youtube-btn" data-youtube-url="https://youtu.be/ZJ5lOQdbL3o">Soaring above the competition</button>
             </div>
+        </section>
 
-            <div class="loading" id="loadingSpinner">
-                <div class="spinner"></div>
-                <p>Loading your video...</p>
+        <section class="bell-section">
+            <h2>ready to take your business to the next level? click the bell to unlock your free demo!</h2>
+            <button id="demoBtn">🔔</button>
+            <canvas id="confetti-canvas"></canvas>
+            <audio id="bellSound" src="https://cdn.jsdelivr.net/gh/taniad2169/Express-Short-Form-For-Email-Marketing/bell-notification.mp3" preload="auto"></audio>
+        </section>
+
+        <section class="content-section bg-[#172636] p-8 rounded-lg">
+            <h3 class="text-xl font-bold text-center text-white mb-6">Business Funding Solutions</h3>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button id="mcaButton" class="px-6 py-3 bg-[#25593b] text-white font-bold rounded-full shadow-lg hover:bg-[#172636] transition-colors duration-300">
+                    MCA: Your Fast Track to Business Funding
+                </button>
+                <a href="https://www.expresscapassociates.com/financing-options/#calculator" target="_blank" class="flex items-center justify-center px-6 py-3 bg-white text-[#25593b] font-bold rounded-full border-2 border-[#25593b] shadow-lg hover:bg-[#25593b] hover:text-white transition-colors duration-300">
+                    Calculate Your Payment
+                </a>
             </div>
-
-            <div class="success-message" id="successMessage">
-                ✅ Video loaded successfully! Now playing: <span id="videoTitle"></span>
-            </div>
-
-            <div id="errorMessage" style="color: red; text-align: center; margin-top: 10px; display: none;"></div>
         </section>
     </main>
 
     <footer>
         <div class="footer-content">
-            <span class="bouncing-emoji">🤔</span>
+            <span class="bouncing-emoji">💰</span>
             <p><strong>Have you ever wondered how small business owners get fast funding without jumping through bank hoops?</strong></p>
             <p>They're securing $10K to $500K in as little as <strong>24 hours</strong>, no collateral, and using it to grow, hire, or just breathe easier.</p>
             <p>It's called a <strong>Merchant Cash Advance</strong>—you get upfront capital based on your daily sales, and repay it as your business earns.</p>
             <p>Super simple: apply online, submit your last 3 months of bank statements, and get an offer the same day.</p>
             <p>If you need quick, flexible business funding—without the red tape—tap the link and let's get you pre-qualified today.</p>
             <a href="https://expresscapitalnetworkassociates.com/#book-appointment" class="booking-button" target="_blank">
-                <span class="emoji">💰</span>Click here to book an appointment
+                <span class="emoji">📅</span>Click here to book an appointment
             </a>
         </div>
     </footer>
     
+    <div id="mcaModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-header">Your Fast Track to Business Funding</div>
+            <div class="modal-links">
+                <a href="https://www.expresscapassociates.com/financing-options#mcash-advance-section" target="_blank" data-close-modal>Merchant cash advance</a>
+                <a href="https://www.expresscapassociates.com/financing-options#business-line-of-credit" target="_blank" data-close-modal>Line of credit</a>
+                <a href="https://www.expresscapassociates.com/financing-options#sba-funding" target="_blank" data-close-modal>SBA Funding</a>
+                <a href="https://www.expresscapassociates.com/financing-options#invoice-factoring" target="_blank" data-close-modal>Invoice factoring</a>
+                <a href="https://www.expresscapassociates.com/financing-options#collateral-funding" target="_blank" data-close-modal>Collateral funding</a>
+                <a href="https://www.expresscapassociates.com/financing-options#equipment-financing" target="_blank" data-close-modal>Equipment funding</a>
+                <a href="https://www.expresscapassociates.com/financing-options#bridge-loan" target="_blank" data-close-modal>Bridge loan</a>
+            </div>
+        </div>
+    </div>
+
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const searchInput = document.getElementById('searchInput');
-            const searchBtn = document.getElementById('searchBtn');
-            const videoIframe = document.getElementById('video-iframe');
-            const loadingSpinner = document.getElementById('loadingSpinner');
-            const errorMessage = document.getElementById('errorMessage');
-            const successMessage = document.getElementById('successMessage');
-            const videoTitle = document.getElementById('videoTitle');
-
-            // Curated list of educational business videos by topic
-            const videoLibrary = {
-                // Business Funding & Finance
-                'funding': 'jNQXAC9IVRw',
-                'business funding': 'jNQXAC9IVRw',
-                'capital': 'jNQXAC9IVRw',
-                'financing': 'jNQXAC9IVRw',
-                'money': 'jNQXAC9IVRw',
-                'investment': 'jNQXAC9IVRw',
-
-                // Marketing & Sales
-                'marketing': '9bZkp7q19f0',
-                'advertising': '9bZkp7q19f0',
-                'sales': '9bZkp7q19f0',
-                'promotion': '9bZkp7q19f0',
-                'branding': '9bZkp7q19f0',
-
-                // Business Growth & Strategy
-                'growth': 'dQw4w9WgXcQ',
-                'strategy': 'dQw4w9WgXcQ',
-                'planning': 'dQw4w9WgXcQ',
-                'development': 'dQw4w9WgXcQ',
-                'expansion': 'dQw4w9WgXcQ',
-
-                // Automation & Efficiency
-                'automation': 'qkDXszfLl8Q',
-                'email': 'qkDXszfLl8Q',
-                'automated': 'qkDXszfLl8Q',
-                'efficiency': 'qkDXszfLl8Q',
-                'productivity': 'qkDXszfLl8Q',
-
-                // General Business
-                'business': '3JluqToquME',
-                'entrepreneur': '3JluqToquME',
-                'startup': '3JluqToquME',
-                'success': '3JluqToquME',
-                'tips': '3JluqToquME'
-            };
-
-            // Video titles for display
-            const videoTitles = {
-                'jNQXAC9IVRw': 'Business Funding Strategies',
-                '9bZkp7q19f0': 'Effective Marketing Techniques',
-                'dQw4w9WgXcQ': 'Business Growth Planning',
-                'qkDXszfLl8Q': 'Business Automation Tips',
-                '3JluqToquME': 'General Business Success'
-            };
-
-            // Function to find the best matching video
-            function findVideoByTopic(query) {
-                const lowerQuery = query.toLowerCase();
-                
-                // Check for exact matches first
-                for (const [keyword, videoId] of Object.entries(videoLibrary)) {
-                    if (lowerQuery.includes(keyword)) {
-                        return videoId;
-                    }
-                }
-                
-                // Default fallback video
-                return 'qkDXszfLl8Q';
+        // Initialize canvas-confetti
+        const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 999 };
+        
+        function shootConfetti() {
+            function randomInRange(min, max) {
+                return Math.random() * (max - min) + min;
             }
 
-            // Function to load a YouTube video
-            function loadYouTubeVideo(videoId, searchQuery = '') {
-                // Show loading spinner
-                loadingSpinner.style.display = 'block';
-                errorMessage.style.display = 'none';
-                successMessage.style.display = 'none';
-                
-                // Validate input
-                if (!searchQuery.trim()) {
-                    searchQuery = 'business tips';
-                }
-
-                setTimeout(() => {
-                    const newSrc = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-                    videoIframe.src = newSrc;
-                    
-                    // Show success message
-                    videoTitle.textContent = videoTitles[videoId] || 'Selected Video';
-                    successMessage.style.display = 'block';
-                    
-                    // Hide loading spinner
-                    loadingSpinner.style.display = 'none';
-                    
-                    // Scroll to video
-                    videoIframe.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    
-                }, 1000);
-            }
-
-            // Function to show error messages
-            function showError(message) {
-                errorMessage.textContent = message;
-                errorMessage.style.display = 'block';
-                loadingSpinner.style.display = 'none';
-                successMessage.style.display = 'none';
-            }
-
-            // Main search function
-            function performSearch() {
-                const query = searchInput.value.trim();
-                
-                if (!query) {
-                    showError('Please enter a search term');
-                    return;
-                }
-
-                const videoId = findVideoByTopic(query);
-                loadYouTubeVideo(videoId, query);
-            }
-
-            // Search button click event
-            searchBtn.addEventListener('click', performSearch);
-
-            // Enter key support
-            searchInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    performSearch();
-                }
+            // Left side
+            confetti({
+                ...defaults,
+                particleCount: 50,
+                origin: { x: randomInRange(0.1, 0.3), y: randomInRange(0.7, 0.9) },
+                colors: ['#25593b', '#ffffff', '#172636'] 
             });
 
-            // Quick search buttons
-            document.querySelectorAll('.quick-search button').forEach(button => {
+            // Right side
+            confetti({
+                ...defaults,
+                particleCount: 50,
+                origin: { x: randomInRange(0.7, 0.9), y: randomInRange(0.7, 0.9) },
+                colors: ['#25593b', '#ffffff', '#172636'] 
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const videoIframe = document.getElementById('video-iframe');
+            const youtubeButtons = document.querySelectorAll('.youtube-btn');
+            const bellButton = document.getElementById('demoBtn');
+            const bellSound = document.getElementById('bellSound');
+            
+            const mcaButton = document.getElementById('mcaButton');
+            const mcaModal = document.getElementById('mcaModal');
+            const closeModalBtn = mcaModal.querySelector('.close-btn');
+            
+            // Function to extract video ID from a YouTube URL
+            function getYouTubeVideoId(url) {
+                try {
+                    const urlObj = new URL(url);
+                    if (urlObj.hostname === 'youtu.be' || urlObj.hostname === 'www.youtu.be') {
+                        return urlObj.pathname.substring(1);
+                    }
+                    const params = new URLSearchParams(urlObj.search);
+                    return params.get('v');
+                } catch (e) {
+                    return null;
+                }
+            }
+
+            // Function to load a YouTube video and smooth scroll
+            function loadYouTubeVideo(videoId) {
+                if (!videoId) {
+                    return;
+                }
+                const newSrc = `https://www.youtube.com/embed/${videoId}`;
+                videoIframe.src = newSrc;
+                
+                // Smooth scroll to the video section
+                document.getElementById('youtube-player').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+            // YouTube buttons click events
+            youtubeButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    const searchTerm = button.getAttribute('data-search');
-                    searchInput.value = searchTerm;
-                    performSearch();
+                    const youtubeUrl = button.getAttribute('data-youtube-url');
+                    const videoId = getYouTubeVideoId(youtubeUrl);
+                    loadYouTubeVideo(videoId);
                 });
             });
 
-            // Add helpful instructions
-            const helpText = document.createElement('div');
-            helpText.innerHTML = `
-                <div style="text-align: center; margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #1d9938;">
-                    <p style="margin: 5px 0; color: #666; font-size: 0.95em;">
-                        <strong>🎯 How to use:</strong> Type any business-related topic above
-                    </p>
-                    <p style="margin: 5px 0; font-size: 0.9em; color: #888;">
-                        <strong>Examples:</strong> "email automation", "funding options", "marketing ideas", "business growth"
-                    </p>
-                    <p style="margin: 5px 0; font-size: 0.85em; color: #1d9938;">
-                        💡 <strong>Tip:</strong> Use the quick buttons above or type your own topic!
-                    </p>
-                </div>
-            `;
-            searchInput.parentNode.parentNode.appendChild(helpText);
+            // Bell button click event
+            bellButton.addEventListener('click', (event) => {
+                event.preventDefault();
+
+                // Play the bell sound
+                if (bellSound && bellSound.readyState >= 2) {
+                    bellSound.currentTime = 0;
+                    bellSound.play().catch(error => {
+                        console.error("Audio playback failed:", error);
+                    });
+                } else if (bellSound) {
+                    console.warn("Audio file is not yet loaded or ready to play.");
+                }
+
+                // Add the ringing animation class
+                bellButton.classList.add('ringing');
+                
+                // Trigger the canvas confetti effect
+                shootConfetti();
+                
+                // Remove the animation class and redirect after 4 seconds
+                setTimeout(() => {
+                    bellButton.classList.remove('ringing');
+                    window.location.href = 'https://taniad2169.github.io/Express-Short-Form-For-Email-Marketing/';
+                }, 4000);
+            });
+
+            // MCA Modal functionality
+            mcaButton.addEventListener('click', () => {
+                mcaModal.style.display = 'flex';
+            });
+            
+            // Close the modal when the close button is clicked
+            closeModalBtn.addEventListener('click', () => {
+                mcaModal.style.display = 'none';
+            });
+
+            // Close the modal when a link is clicked
+            mcaModal.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mcaModal.style.display = 'none';
+                });
+            });
+
+            // Close the modal if the user clicks outside of it
+            window.addEventListener('click', (event) => {
+                if (event.target === mcaModal) {
+                    mcaModal.style.display = 'none';
+                }
+            });
         });
     </script>
 </body>
