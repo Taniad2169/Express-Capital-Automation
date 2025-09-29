@@ -12,7 +12,7 @@
             margin: 0;
             padding: 0;
             color: #fff;
-            background-color: #172636;
+            background-color: #0a1929; /* Darker navy blue */
             min-height: 100vh;
             overflow-x: hidden;
         }
@@ -23,14 +23,15 @@
             padding: 20px;
         }
         
-        /* Header Styles */
+        /* Header Styles - Updated to #116b3a Green */
         header {
             text-align: center;
             padding: 50px 20px;
-            background: linear-gradient(135deg, #25593b 0%, #1a472d 100%);
+            background: #116b3a; /* Updated green color */
             color: #fff;
             position: relative;
             overflow: hidden;
+            border-bottom: 3px solid #0a4d27; /* Darker green accent */
         }
 
         header::before {
@@ -60,7 +61,7 @@
         
         /* Main Content Section Styles */
         .content-section {
-            background-color: #172636;
+            background-color: #0a1929; /* Navy blue */
             border-radius: 15px;
             padding: 40px;
             margin-bottom: 30px;
@@ -82,7 +83,7 @@
             height: 0;
             overflow: hidden;
             max-width: 100%;
-            background-color: #172636;
+            background-color: #0a1929; /* Navy blue */
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
@@ -96,9 +97,9 @@
             border-radius: 8px;
         }
         
-        /* Bell section */
+        /* Bell section - Updated to #116b3a Green */
         .bell-section {
-            background: linear-gradient(135deg, #25593b 0%, #1a472d 100%);
+            background: linear-gradient(135deg, #116b3a 0%, #0a4d27 100%); /* Updated green gradient */
             padding: 2.5rem;
             border-radius: 1rem;
             text-align: center;
@@ -179,7 +180,7 @@
             gap: 10px;
             margin-top: 20px;
             align-items: center;
-            background-color: rgba(23, 38, 54, 0.7);
+            background-color: rgba(10, 25, 41, 0.7); /* Navy blue with transparency */
             padding: 20px;
             border-radius: 10px;
             backdrop-filter: blur(10px);
@@ -189,7 +190,7 @@
             width: 100%;
             max-width: 400px;
             padding: 1rem;
-            background: linear-gradient(135deg, #25593b 0%, #1a472d 100%);
+            background: linear-gradient(135deg, #116b3a 0%, #0a4d27 100%); /* Updated green gradient */
             color: #fff;
             border-radius: 9999px;
             border: 2px solid rgba(255,255,255,0.1);
@@ -201,7 +202,7 @@
         }
         
         .youtube-btn:hover {
-            background: linear-gradient(135deg, #1a472d 0%, #25593b 100%);
+            background: linear-gradient(135deg, #0a4d27 0%, #116b3a 100%);
             transform: translateY(-3px);
             box-shadow: 0 7px 14px rgba(0,0,0,0.2);
             border-color: rgba(255,255,255,0.3);
@@ -213,13 +214,13 @@
             padding: 40px 20px;
             color: #fff;
             margin-top: 30px;
-            background-color: #172636;
+            background-color: #0a1929; /* Navy blue */
             position: relative;
             border-top: 1px solid rgba(255,255,255,0.1);
         }
 
         .footer-content {
-            background: linear-gradient(135deg, rgba(37, 89, 59, 0.2) 0%, rgba(23, 38, 54, 0.8) 100%);
+            background: linear-gradient(135deg, rgba(17, 107, 58, 0.2) 0%, rgba(10, 25, 41, 0.8) 100%);
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 40px;
@@ -289,14 +290,29 @@
         
         .booking-button:hover {
             background-color: #fff;
-            color: #172636;
-            border-color: #172636;
+            color: #0a1929; /* Navy blue */
+            border-color: #0a1929; /* Navy blue */
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         .booking-button .emoji {
             margin-right: 10px;
+        }
+
+        /* Copyright Section */
+        .copyright {
+            text-align: center;
+            padding: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9em;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 30px;
+            background-color: rgba(10, 25, 41, 0.8);
+        }
+
+        .copyright p {
+            margin: 5px 0;
         }
 
         /* Modal Styles */
@@ -317,11 +333,11 @@
         }
 
         .modal-content {
-            background: linear-gradient(135deg, #172636 0%, #0f1a24 100%);
+            background: linear-gradient(135deg, #0a1929 0%, #071220 100%); /* Navy blue gradient */
             color: #fff;
             margin: auto;
             padding: 25px;
-            border: 1px solid rgba(37, 89, 59, 0.5);
+            border: 1px solid rgba(17, 107, 58, 0.5);
             width: 90%;
             max-width: 500px;
             border-radius: 15px;
@@ -345,11 +361,11 @@
         
         .modal-links a {
             display: block;
-            background: linear-gradient(135deg, #25593b 0%, #1a472d 100%);
+            background: linear-gradient(135deg, #116b3a 0%, #0a4d27 100%); /* Updated green gradient */
             color: #fff;
             padding: 15px;
             margin: 10px 0;
-            border: 1px solid rgba(37, 89, 59, 0.5);
+            border: 1px solid rgba(17, 107, 58, 0.5);
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
@@ -358,7 +374,7 @@
         }
         
         .modal-links a:hover {
-            background: linear-gradient(135deg, #1a472d 0%, #25593b 100%);
+            background: linear-gradient(135deg, #0a4d27 0%, #116b3a 100%);
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
@@ -395,17 +411,17 @@
         .gap-4 { gap: 1rem; }
         .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
         .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
-        .bg-\[\#25593b\] { background-color: #25593b; }
-        .text-\[\#172636\] { color: #172636; }
+        .bg-\[\#116b3a\] { background-color: #116b3a; }
+        .text-\[\#0a1929\] { color: #0a1929; }
         .rounded-full { border-radius: 9999px; }
         .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
-        .hover\:bg-\[\#172636\]:hover { background-color: #172636; }
+        .hover\:bg-\[\#0a1929\]:hover { background-color: #0a1929; }
         .transition-colors { transition-property: background-color, border-color, color, fill, stroke; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
         .duration-300 { transition-duration: 300ms; }
         .bg-white { background-color: #fff; }
         .border-2 { border-width: 2px; }
-        .border-\[\#25593b\] { border-color: #25593b; }
-        .hover\:bg-\[\#25593b\]:hover { background-color: #25593b; }
+        .border-\[\#116b3a\] { border-color: #116b3a; }
+        .hover\:bg-\[\#116b3a\]:hover { background-color: #116b3a; }
         .hover\:text-white:hover { color: #fff; }
         .items-center { align-items: center; }
         .p-8 { padding: 2rem; }
@@ -417,7 +433,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: linear-gradient(135deg, rgba(37, 89, 59, 0.95) 0%, rgba(23, 38, 54, 0.95) 100%);
+            background: linear-gradient(135deg, rgba(17, 107, 58, 0.95) 0%, rgba(10, 25, 41, 0.95) 100%);
             color: white;
             padding: 30px 50px;
             border-radius: 15px;
@@ -511,13 +527,13 @@
             </audio>
         </section>
 
-        <section class="content-section bg-[#172636] p-8 rounded-lg">
+        <section class="content-section bg-[#0a1929] p-8 rounded-lg">
             <h3 class="text-xl font-bold text-center text-white mb-6">Business Funding Solutions</h3>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <button id="mcaButton" class="px-6 py-3 bg-[#25593b] text-white font-bold rounded-full shadow-lg hover:bg-[#172636] transition-colors duration-300">
+                <button id="mcaButton" class="px-6 py-3 bg-[#116b3a] text-white font-bold rounded-full shadow-lg hover:bg-[#0a1929] transition-colors duration-300">
                     MCA: Your Fast Track to Business Funding
                 </button>
-                <a href="https://www.expresscapassociates.com/financing-options/#calculator" target="_blank" class="flex items-center justify-center px-6 py-3 bg-white text-[#25593b] font-bold rounded-full border-2 border-[#25593b] shadow-lg hover:bg-[#25593b] hover:text-white transition-colors duration-300">
+                <a href="https://www.expresscapassociates.com/financing-options/#calculator" target="_blank" class="flex items-center justify-center px-6 py-3 bg-white text-[#116b3a] font-bold rounded-full border-2 border-[#116b3a] shadow-lg hover:bg-[#116b3a] hover:text-white transition-colors duration-300">
                     Calculate Your Payment
                 </a>
             </div>
@@ -535,6 +551,12 @@
             <a href="https://expresscapitalnetworkassociates.com/#book-appointment" class="booking-button" target="_blank">
                 <span class="emoji">📅</span>Click here to book an appointment
             </a>
+        </div>
+        
+        <!-- Copyright Section -->
+        <div class="copyright">
+            <p>&copy; 2025 Express Capital Associates. All rights reserved.</p>
+            <p>Soaring Above the Competition</p>
         </div>
     </footer>
     
@@ -575,7 +597,7 @@
                 ...defaults,
                 particleCount: 100,
                 origin: { x: randomInRange(0.1, 0.3), y: randomInRange(0.7, 0.9) },
-                colors: ['#25593b', '#ffffff', '#172636', '#ffd700', '#ff6b6b', '#4ecdc4', '#45b7d1'] 
+                colors: ['#116b3a', '#ffffff', '#0a1929', '#ffd700', '#ff6b6b', '#4ecdc4', '#45b7d1'] 
             });
 
             // Right side
@@ -583,7 +605,7 @@
                 ...defaults,
                 particleCount: 100,
                 origin: { x: randomInRange(0.7, 0.9), y: randomInRange(0.7, 0.9) },
-                colors: ['#25593b', '#ffffff', '#172636', '#ffd700', '#ff6b6b', '#4ecdc4', '#45b7d1'] 
+                colors: ['#116b3a', '#ffffff', '#0a1929', '#ffd700', '#ff6b6b', '#4ecdc4', '#45b7d1'] 
             });
             
             // Top center
@@ -593,7 +615,7 @@
                 angle: 90,
                 spread: 100,
                 origin: { x: 0.5, y: 0 },
-                colors: ['#25593b', '#ffffff', '#172636', '#ffd700', '#ff6b6b', '#4ecdc4', '#45b7d1']
+                colors: ['#116b3a', '#ffffff', '#0a1929', '#ffd700', '#ff6b6b', '#4ecdc4', '#45b7d1']
             });
             
             // Bottom center
@@ -603,7 +625,7 @@
                 angle: 270,
                 spread: 100,
                 origin: { x: 0.5, y: 1 },
-                colors: ['#25593b', '#ffffff', '#172636', '#ffd700', '#ff6b6b', '#4ecdc4', '#45b7d1']
+                colors: ['#116b3a', '#ffffff', '#0a1929', '#ffd700', '#ff6b6b', '#4ecdc4', '#45b7d1']
             });
             
             // Additional bursts for more celebration
@@ -612,7 +634,7 @@
                     particleCount: 200,
                     spread: 100,
                     origin: { y: 0.6 },
-                    colors: ['#25593b', '#ffffff', '#172636', '#ffd700', '#ff6b6b', '#4ecdc4', '#45b7d1']
+                    colors: ['#116b3a', '#ffffff', '#0a1929', '#ffd700', '#ff6b6b', '#4ecdc4', '#45b7d1']
                 });
             }, 250);
             
@@ -621,7 +643,7 @@
                     particleCount: 200,
                     spread: 100,
                     origin: { y: 0.4 },
-                    colors: ['#25593b', '#ffffff', '#172636', '#ffd700', '#ff6b6b', '#4ecdc4', '#45b7d1']
+                    colors: ['#116b3a', '#ffffff', '#0a1929', '#ffd700', '#ff6b6b', '#4ecdc4', '#45b7d1']
                 });
             }, 500);
             
@@ -631,7 +653,7 @@
                     particleCount: 300,
                     spread: 70,
                     origin: { y: 0.5 },
-                    colors: ['#25593b', '#ffffff', '#172636', '#ffd700', '#ff6b6b', '#4ecdc4', '#45b7d1']
+                    colors: ['#116b3a', '#ffffff', '#0a1929', '#ffd700', '#ff6b6b', '#4ecdc4', '#45b7d1']
                 });
             }, 1000);
         }
