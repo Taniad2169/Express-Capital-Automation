@@ -14,6 +14,7 @@
             color: #fff;
             background-color: #172636;
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
         .container {
@@ -26,10 +27,21 @@
         header {
             text-align: center;
             padding: 50px 20px;
-            background-color: #25593b;
+            background: linear-gradient(135deg, #25593b 0%, #1a472d 100%);
             color: #fff;
             position: relative;
             overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
         }
 
         header h1 {
@@ -37,11 +49,13 @@
             margin-bottom: 10px;
             color: #fff;
             font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         header p {
             font-size: 1.5em;
             color: #fff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
         
         /* Main Content Section Styles */
@@ -51,6 +65,7 @@
             padding: 40px;
             margin-bottom: 30px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .content-section h2 {
@@ -69,6 +84,7 @@
             max-width: 100%;
             background-color: #172636;
             border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
         #youtube-player .video-container iframe {
@@ -77,18 +93,31 @@
             left: 0;
             width: 100%;
             height: 100%;
+            border-radius: 8px;
         }
         
         /* Bell section */
         .bell-section {
-            background-color: #25593b;
+            background: linear-gradient(135deg, #25593b 0%, #1a472d 100%);
             padding: 2.5rem;
             border-radius: 1rem;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
             color: #fff;
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .bell-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            opacity: 0.5;
         }
 
         .bell-section h2 {
@@ -96,16 +125,27 @@
             font-weight: bold;
             margin-bottom: 1rem;
             color: #fff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            position: relative;
         }
         
         /* Demo button styles */
         #demoBtn {
-            font-size: 40px;
+            font-size: 60px;
             cursor: pointer;
             border: none;
             background: none;
             display: block;
             margin: 20px auto;
+            transition: transform 0.3s, filter 0.3s;
+            position: relative;
+            z-index: 2;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+        }
+
+        #demoBtn:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(0 5px 20px rgba(255,215,0,0.5));
         }
 
         /* Bell animation (shake) */
@@ -139,29 +179,32 @@
             gap: 10px;
             margin-top: 20px;
             align-items: center;
-            background-color: #172636;
+            background-color: rgba(23, 38, 54, 0.7);
             padding: 20px;
             border-radius: 10px;
+            backdrop-filter: blur(10px);
         }
 
         .youtube-btn {
             width: 100%;
             max-width: 400px;
             padding: 1rem;
-            background-color: #25593b;
+            background: linear-gradient(135deg, #25593b 0%, #1a472d 100%);
             color: #fff;
             border-radius: 9999px;
-            border: 2px solid #172636;
+            border: 2px solid rgba(255,255,255,0.1);
             font-weight: 600;
-            transition: background-color 0.3s, color 0.3s;
+            transition: all 0.3s ease;
             text-align: center;
             cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         
         .youtube-btn:hover {
-            background-color: #172636;
-            color: #fff;
-            border-color: #25593b;
+            background: linear-gradient(135deg, #1a472d 0%, #25593b 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 7px 14px rgba(0,0,0,0.2);
+            border-color: rgba(255,255,255,0.3);
         }
 
         /* Footer Styles */
@@ -172,21 +215,25 @@
             margin-top: 30px;
             background-color: #172636;
             position: relative;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
 
         .footer-content {
-            background-color: #172636;
+            background: linear-gradient(135deg, rgba(37, 89, 59, 0.2) 0%, rgba(23, 38, 54, 0.8) 100%);
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 40px;
             margin: 20px auto;
             max-width: 800px;
             text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .footer-content p {
             color: #fff;
             font-size: 1.15em;
+            line-height: 1.6;
         }
         
         .footer-content strong {
@@ -212,43 +259,44 @@
         .booking-button {
             display: inline-block;
             margin-top: 20px;
-            padding: 10px 20px;
+            padding: 12px 25px;
             font-size: 1.3em;
             font-weight: bold;
             text-decoration: none;
             color: #fff;
-            background-color: transparent;
+            background: transparent;
             border: 2px solid #fff;
             border-radius: 25px;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .booking-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .booking-button:hover::before {
+            left: 100%;
         }
         
         .booking-button:hover {
             background-color: #fff;
             color: #172636;
             border-color: #172636;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         .booking-button .emoji {
             margin-right: 10px;
-        }
-
-        /* Copyright Section - Enhanced visibility */
-        .copyright {
-            margin-top: 40px;
-            padding-top: 25px;
-            border-top: 2px solid #25593b;
-            color: #fff;
-            font-size: 1em;
-            text-align: center;
-            width: 100%;
-            clear: both;
-        }
-
-        .copyright p {
-            margin: 8px 0;
-            opacity: 0.9;
-            font-weight: 500;
         }
 
         /* Modal Styles */
@@ -261,7 +309,7 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0,0,0,0.5);
+            background-color: rgba(0,0,0,0.7);
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
             justify-content: center;
@@ -269,16 +317,16 @@
         }
 
         .modal-content {
-            background-color: #172636;
+            background: linear-gradient(135deg, #172636 0%, #0f1a24 100%);
             color: #fff;
             margin: auto;
-            padding: 20px;
-            border: 1px solid #25593b;
+            padding: 25px;
+            border: 1px solid rgba(37, 89, 59, 0.5);
             width: 90%;
             max-width: 500px;
-            border-radius: 10px;
+            border-radius: 15px;
             position: relative;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             text-align: center;
             animation: fadeInScale 0.3s ease-out;
         }
@@ -297,11 +345,11 @@
         
         .modal-links a {
             display: block;
-            background: #25593b;
+            background: linear-gradient(135deg, #25593b 0%, #1a472d 100%);
             color: #fff;
             padding: 15px;
             margin: 10px 0;
-            border: 1px solid #25593b;
+            border: 1px solid rgba(37, 89, 59, 0.5);
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
@@ -310,11 +358,9 @@
         }
         
         .modal-links a:hover {
-            background: #172636;
-            color: #fff;
-            border-color: #25593b;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            transform: translateY(-2px);
+            background: linear-gradient(135deg, #1a472d 0%, #25593b 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         .close-btn {
@@ -326,6 +372,7 @@
             top: 10px;
             right: 15px;
             cursor: pointer;
+            transition: color 0.3s;
         }
 
         .close-btn:hover,
@@ -364,8 +411,69 @@
         .p-8 { padding: 2rem; }
         .rounded-lg { border-radius: 0.5rem; }
 
+        /* Celebration message */
+        .celebration-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, rgba(37, 89, 59, 0.95) 0%, rgba(23, 38, 54, 0.95) 100%);
+            color: white;
+            padding: 30px 50px;
+            border-radius: 15px;
+            font-size: 2.5rem;
+            font-weight: bold;
+            z-index: 1001;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+            animation: pulse 1s infinite;
+            display: none;
+            border: 2px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .celebration-message span {
+            display: block;
+            font-size: 1.5rem;
+            margin-top: 10px;
+            font-weight: normal;
+        }
+        
+        @keyframes pulse {
+            0% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.05); }
+            100% { transform: translate(-50%, -50%) scale(1); }
+        }
+
         @media (min-width: 640px) {
             .sm\:flex-row { flex-direction: row; }
+            .youtube-buttons {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .youtube-btn {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+            header p {
+                font-size: 1.2em;
+            }
+            .content-section h2 {
+                font-size: 1.8em;
+            }
+            .celebration-message {
+                font-size: 1.8rem;
+                padding: 20px 30px;
+            }
+            .celebration-message span {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -380,7 +488,8 @@
         <section id="youtube-player" class="content-section">
             <h2 class="text-white font-bold">Welcome to Express Capital Associates</h2>
             <div class="video-container">
-                <iframe id="video-iframe" src="https://www.youtube.com/embed/ZJ5lOQdbL3o" frameborder="0" allowfullscreen></iframe>
+                <!-- Simplified YouTube iframe to reduce permission warnings -->
+                <iframe id="video-iframe" src="https://www.youtube.com/embed/ZJ5lOQdbL3o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
 
             <div class="youtube-buttons">
@@ -392,10 +501,14 @@
         </section>
 
         <section class="bell-section">
-            <h2>ready to take your business to the next level? click the bell to unlock your free demo!</h2>
+            <h2>Ready to take your business to the next level? Click the bell to unlock your free demo!</h2>
             <button id="demoBtn">🔔</button>
             <canvas id="confetti-canvas"></canvas>
-            <audio id="bellSound" src="https://cdn.jsdelivr.net/gh/taniad2169/Express-Short-Form-For-Email-Marketing/bell-notification.mp3" preload="auto"></audio>
+            <!-- Added multiple audio sources for better compatibility -->
+            <audio id="bellSound" preload="auto">
+                <source src="https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3" type="audio/mpeg">
+                <source src="https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3" type="audio/mpeg">
+            </audio>
         </section>
 
         <section class="content-section bg-[#172636] p-8 rounded-lg">
@@ -423,12 +536,6 @@
                 <span class="emoji">📅</span>Click here to book an appointment
             </a>
         </div>
-        
-        <!-- Copyright Section - Enhanced for visibility -->
-        <div class="copyright">
-            <p>&copy; 2024 Express Capital Associates. All rights reserved.</p>
-            <p>Soaring Above the Competition</p>
-        </div>
     </footer>
     
     <div id="mcaModal" class="modal">
@@ -446,6 +553,12 @@
             </div>
         </div>
     </div>
+    
+    <!-- Celebration message -->
+    <div id="celebrationMessage" class="celebration-message">
+        🎉 Congratulations! 🎉<br>
+        <span>You're on your way to business success!</span>
+    </div>
 
     <script>
         // Initialize canvas-confetti
@@ -456,21 +569,71 @@
                 return Math.random() * (max - min) + min;
             }
 
+            // Multiple confetti bursts for a more festive effect
             // Left side
             confetti({
                 ...defaults,
-                particleCount: 50,
+                particleCount: 100,
                 origin: { x: randomInRange(0.1, 0.3), y: randomInRange(0.7, 0.9) },
-                colors: ['#25593b', '#ffffff', '#172636'] 
+                colors: ['#25593b', '#ffffff', '#172636', '#ffd700', '#ff6b6b', '#4ecdc4', '#45b7d1'] 
             });
 
             // Right side
             confetti({
                 ...defaults,
-                particleCount: 50,
+                particleCount: 100,
                 origin: { x: randomInRange(0.7, 0.9), y: randomInRange(0.7, 0.9) },
-                colors: ['#25593b', '#ffffff', '#172636'] 
+                colors: ['#25593b', '#ffffff', '#172636', '#ffd700', '#ff6b6b', '#4ecdc4', '#45b7d1'] 
             });
+            
+            // Top center
+            confetti({
+                ...defaults,
+                particleCount: 150,
+                angle: 90,
+                spread: 100,
+                origin: { x: 0.5, y: 0 },
+                colors: ['#25593b', '#ffffff', '#172636', '#ffd700', '#ff6b6b', '#4ecdc4', '#45b7d1']
+            });
+            
+            // Bottom center
+            confetti({
+                ...defaults,
+                particleCount: 150,
+                angle: 270,
+                spread: 100,
+                origin: { x: 0.5, y: 1 },
+                colors: ['#25593b', '#ffffff', '#172636', '#ffd700', '#ff6b6b', '#4ecdc4', '#45b7d1']
+            });
+            
+            // Additional bursts for more celebration
+            setTimeout(() => {
+                confetti({
+                    particleCount: 200,
+                    spread: 100,
+                    origin: { y: 0.6 },
+                    colors: ['#25593b', '#ffffff', '#172636', '#ffd700', '#ff6b6b', '#4ecdc4', '#45b7d1']
+                });
+            }, 250);
+            
+            setTimeout(() => {
+                confetti({
+                    particleCount: 200,
+                    spread: 100,
+                    origin: { y: 0.4 },
+                    colors: ['#25593b', '#ffffff', '#172636', '#ffd700', '#ff6b6b', '#4ecdc4', '#45b7d1']
+                });
+            }, 500);
+            
+            // Final burst
+            setTimeout(() => {
+                confetti({
+                    particleCount: 300,
+                    spread: 70,
+                    origin: { y: 0.5 },
+                    colors: ['#25593b', '#ffffff', '#172636', '#ffd700', '#ff6b6b', '#4ecdc4', '#45b7d1']
+                });
+            }, 1000);
         }
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -478,6 +641,7 @@
             const youtubeButtons = document.querySelectorAll('.youtube-btn');
             const bellButton = document.getElementById('demoBtn');
             const bellSound = document.getElementById('bellSound');
+            const celebrationMessage = document.getElementById('celebrationMessage');
             
             const mcaButton = document.getElementById('mcaButton');
             const mcaModal = document.getElementById('mcaModal');
@@ -522,14 +686,18 @@
             bellButton.addEventListener('click', (event) => {
                 event.preventDefault();
 
+                // Show celebration message
+                celebrationMessage.style.display = 'block';
+                
                 // Play the bell sound
-                if (bellSound && bellSound.readyState >= 2) {
+                if (bellSound) {
                     bellSound.currentTime = 0;
                     bellSound.play().catch(error => {
                         console.error("Audio playback failed:", error);
+                        // Try creating a new audio element if the current one fails
+                        const newAudio = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3');
+                        newAudio.play().catch(e => console.error("Alternative audio also failed:", e));
                     });
-                } else if (bellSound) {
-                    console.warn("Audio file is not yet loaded or ready to play.");
                 }
 
                 // Add the ringing animation class
@@ -541,7 +709,9 @@
                 // Remove the animation class and redirect after 4 seconds
                 setTimeout(() => {
                     bellButton.classList.remove('ringing');
-                    window.location.href = 'https://taniad2169.github.io/Express-Short-Form-For-Email-Marketing/';
+                    celebrationMessage.style.display = 'none';
+                    // Updated URL to point to the requested link
+                    window.location.href = 'https://taniad2169.github.io/Express_Cap_Web_App/';
                 }, 4000);
             });
 
